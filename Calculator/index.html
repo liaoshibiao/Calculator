@@ -109,16 +109,21 @@
    	}
    	function Division(){//除法
 		 var str = TearA.innerText;	
-		 var arr = str.split('/');  
-		 var ResultJian = arr[0]/arr[1];
+		 var arr = str.split('*');  
+		 var ResultJian = arr[0]*arr[1];
 		 TearA.innerHTML = ResultJian;
    	}
-   dengyu.addEventListener('tap',function(){
-   	
-//  			Addition()		//加法
-//	  			Subtraction();	//减法
-	  			Multiplication();//乘法
-	  		  //Division()		//除法	
+   dengyu.addEventListener('tap',function(){		  
+	  	var strA = TearA.innerText;
+		var regA = RegExp(/-/);
+		if(strA.match(regA)){
+		      Subtraction();
+		}else{
+			Multiplication()
+		}
+	
+		
+		
    })
 	
    	qingchu.addEventListener('tap',function(){
